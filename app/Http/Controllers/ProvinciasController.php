@@ -18,7 +18,7 @@ class ProvinciasController extends Controller
         foreach ($provincias as $provincia){
            $prov = Provincia::where('codigo', '=', $provincia->codigo)->first();
            if($prov){
-               echo "La $provincia->nombre ya esta registrada<br>";
+               //echo "La $provincia->nombre ya esta registrada<br>";
            }else{
                $prov = new Provincia();
                $prov->codigo = $provincia->codigo;
