@@ -32,6 +32,7 @@ class ProvinciasController extends Controller
                //return $provincias;
            }
         }
+        return $provincias;
     }
 
     public function show($codigo){

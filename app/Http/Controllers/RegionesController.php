@@ -32,6 +32,7 @@ class RegionesController extends Controller
                 //return $regiones;
             }
         }
+        return $regiones;
     }
 
     public function show($codigo){

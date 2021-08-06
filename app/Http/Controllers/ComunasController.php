@@ -33,6 +33,7 @@ class ComunasController extends Controller
                 //return $comunas;
             }
         }
+        return $comunas;
     }
 
     public function show($codigo){
