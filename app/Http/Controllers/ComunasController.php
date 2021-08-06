@@ -18,7 +18,7 @@ class ComunasController extends Controller
         foreach ($comunas as $comuna){
             $res = Comuna::where('codigo', '=', $comuna->codigo)->first();
             if($res){
-                echo "La $comuna->nombre ya esta registrada<br>";
+                //echo "La $comuna->nombre ya esta registrada";
             }else{
                 $com = new Comuna();
                 $com->codigo = $comuna->codigo;
