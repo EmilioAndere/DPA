@@ -18,7 +18,7 @@ class RegionesController extends Controller
         foreach ($regiones as $region){
             $res = Region::where('codigo', '=', $region->codigo)->first();
             if($res){
-                echo "La $region->nombre ya esta registrada";
+                echo "La $region->nombre ya esta registrada<br>";
             }else{
                 $reg = new Region();
                 $reg->codigo = $region->codigo;
