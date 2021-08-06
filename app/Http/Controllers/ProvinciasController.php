@@ -18,7 +18,7 @@ class ProvinciasController extends Controller
         foreach ($provincias as $provincia){
            $prov = Provincia::where('codigo', '=', $provincia->codigo)->first();
            if($prov){
-               return $provincias;
+               echo "La $provincia->nombre ya esta registrada";
            }else{
                $prov = new Provincia();
                $prov->codigo = $provincia->codigo;
@@ -29,7 +29,7 @@ class ProvinciasController extends Controller
                $prov->url = $provincia->url;
                $prov->codigo_padre = $provincia->codigo_padre;
                $prov->save();
-               return $provincias;
+               //return $provincias;
            }
         }
     }

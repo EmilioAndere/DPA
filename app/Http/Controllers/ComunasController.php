@@ -18,7 +18,7 @@ class ComunasController extends Controller
         foreach ($comunas as $comuna){
             $res = Comuna::where('codigo', '=', $comuna->codigo)->first();
             if($res){
-                return $comunas;
+                echo "La $comuna->nombre ya esta registrada";
             }else{
                 $com = new Comuna();
                 $com->codigo = $comuna->codigo;
@@ -29,7 +29,8 @@ class ComunasController extends Controller
                 $com->url = $comuna->url;
                 $com->codigo_padre = $comuna->codigo_padre;
                 $com->save();
-                return $comunas;
+
+                //return $comunas;
             }
         }
     }

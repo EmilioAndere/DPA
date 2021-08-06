@@ -18,7 +18,7 @@ class RegionesController extends Controller
         foreach ($regiones as $region){
             $res = Region::where('codigo', '=', $region->codigo)->first();
             if($res){
-                return $regiones;
+                echo "La $region->nombre ya esta registrada";
             }else{
                 $reg = new Region();
                 $reg->codigo = $region->codigo;
@@ -29,7 +29,7 @@ class RegionesController extends Controller
                 $reg->url = "localhost:8000/api/weather/$region->lat,$region->lng";
                 $reg->codigo_padre = $region->codigo_padre;
                 $reg->save();
-                return $regiones;
+                //return $regiones;
             }
         }
     }
